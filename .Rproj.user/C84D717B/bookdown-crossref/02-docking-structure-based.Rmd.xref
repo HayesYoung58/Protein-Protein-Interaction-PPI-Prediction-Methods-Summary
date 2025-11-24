@@ -1,0 +1,46 @@
+h1:docking Docking-Based (Structure-Based) PPI Prediction
+h2:overview-of-docking-approaches 2.1 Overview of Docking Approaches
+h2:haddock 2.2 HADDOCK
+h3:key-features Key Features
+h3:input Input
+h3:output Output
+h3:advantages Advantages
+h3:limitations Limitations
+h2:hdock-server 2.3 HDOCK Server
+h3:key-features-1 Key Features
+h3:input-1 Input
+h3:output-1 Output
+h3:advantages-1 Advantages
+h3:limitations-1 Limitations
+h2:cluspro 2.4 ClusPro
+h3:key-features-2 Key Features
+h3:input-2 Input
+h3:output-2 Output
+h3:advantages-2 Advantages
+h3:limitations-2 Limitations
+h2:zdock 2.5 ZDOCK
+h3:key-features-3 Key Features
+h3:input-3 Input
+h3:output-3 Output
+h3:advantages-3 Advantages
+h3:limitations-3 Limitations
+h2:gramm-vakser-lab 2.6 GRAMM (Vakser Lab)
+h3:key-features-4 Key Features
+h3:input-4 Input
+h3:output-4 Output
+h3:advantages-4 Advantages
+h3:limitations-4 Limitations
+h2:pydock 2.7 pyDock
+h3:key-features-5 Key Features
+h3:input-5 Input
+h3:output-5 Output
+h3:advantages-5 Advantages
+h3:limitations-5 Limitations
+h2:comparative-summary-of-docking-tools 2.8 Comparative Summary of Docking Tools
+h2:practical-workflow-suggestions 2.9 Practical Workflow Suggestions
+h3:when-starting-without-structural-information 
+h3:when-interface-residues-are-known-or-predicted 
+h3:when-many-protein-pairs-must-be-screened 
+h3:when-sequences-are-available-but-structures-are-missing 
+h2:relation-to-other-chapters 2.10 Relation to Other Chapters
+

@@ -1,0 +1,38 @@
+h1:structure-generation Structure Generation Methods: AlphaFold-Multimer
+h2:what-is-alphafold-multimer 6.1 What Is AlphaFold-Multimer?
+h2:how-alphafold-multimer-works 6.2 How AlphaFold-Multimer Works
+h3:joint-msa-construction 
+h3:evoformer-multimer-blocks 
+h3:structure-module 
+h3:recycling 
+h2:key-confidence-metrics-plddt-ptm-iptm 6.3 Key Confidence Metrics (pLDDT, pTM, ipTM)
+h3:plddt-local-confidence 
+h3:ptm-predicted-tm-score 
+h3:iptm-inter-chain-tm-score 
+h3:recommended-composite-score 
+h2:predicted-aligned-error-pae 6.4 Predicted Aligned Error (PAE)
+h2:evaluating-af-multimer-predictions-with-dockq 6.5 Evaluating AF-Multimer Predictions with DockQ
+h3:dockq-score-interpretation 
+h2:advantages-of-alphafold-multimer 6.6 Advantages of AlphaFold-Multimer
+h3:predicts-complexes-directly-from-sequence 
+h3:often-more-accurate-than-docking 
+h3:provides-residues-level-interface-confidence 
+h3:useful-for-protein-design-workflows 
+h3:does-not-require-templates-or-known-interface-information 
+h2:limitations-of-alphafold-multimer 6.7 Limitations of AlphaFold-Multimer
+h3:limited-for-transient-or-weak-interactions 
+h3:sensitive-to-msa-pairing 
+h3:may-generate-biologically-irrelevant-assemblies 
+h3:cannot-explore-alternative-binding-modes 
+h3:poor-performance-for 
+h3:not-ideal-for-mutation-scanning 
+h2:integrating-af-multimer-with-docking-pisa-and-deep-learning 6.8 Integrating AF-Multimer with Docking, PISA, and Deep Learning
+h3:step-1-sequence-level-screening 
+h3:step-2-af-multimer-structure-prediction 
+h3:step-3-evaluate-interfaces 
+h3:step-4-complement-with-docking-chapter-2 
+h3:step-5-interface-stability-with-pdbepisa-chapter-3 
+h3:step-6-final-ranking-with-dockq 
+h2:recommended-best-practices 6.9 Recommended Best Practices
+h2:summary 6.10 Summary
+

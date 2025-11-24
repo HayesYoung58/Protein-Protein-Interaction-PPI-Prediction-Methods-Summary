@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Structure Generation Methods: AlphaFold-Multimer | Protein–Protein Interaction (PPI) Prediction Methods Summary</title>
+  <meta name="description" content="A summary of computational methods for protein–protein interaction (PPI) prediction, including docking-based approaches, structural analysis, sequence/knowledge-based models, deep learning frameworks, and structure-generation models." />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Structure Generation Methods: AlphaFold-Multimer | Protein–Protein Interaction (PPI) Prediction Methods Summary" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A summary of computational methods for protein–protein interaction (PPI) prediction, including docking-based approaches, structural analysis, sequence/knowledge-based models, deep learning frameworks, and structure-generation models." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Structure Generation Methods: AlphaFold-Multimer | Protein–Protein Interaction (PPI) Prediction Methods Summary" />
+  
+  <meta name="twitter:description" content="A summary of computational methods for protein–protein interaction (PPI) prediction, including docking-based approaches, structural analysis, sequence/knowledge-based models, deep learning frameworks, and structure-generation models." />
+  
+
+<meta name="author" content="Haoyi Yang" />
+
+
+<meta name="date" content="2025-11-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="deep-learning.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Protein–Protein Interaction (PPI) Prediction</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#why-computational-ppi-prediction-matters"><i class="fa fa-check"></i>1.1 Why Computational PPI Prediction Matters</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#categories-of-computational-ppi-prediction-methods"><i class="fa fa-check"></i>1.2 Categories of Computational PPI Prediction Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#docking-based-structure-based-methods"><i class="fa fa-check"></i><strong>1. Docking-Based (Structure-Based) Methods</strong></a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#structure-based-interface-analysis"><i class="fa fa-check"></i><strong>2. Structure-Based Interface Analysis</strong></a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#sequence-knowledgebased-prediction"><i class="fa fa-check"></i><strong>3. Sequence / Knowledge–Based Prediction</strong></a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#deep-learningbased-ppi-prediction"><i class="fa fa-check"></i><strong>4. Deep Learning–Based PPI Prediction</strong></a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#structure-generation-approaches"><i class="fa fa-check"></i><strong>5. Structure Generation Approaches</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#when-to-use-each-category"><i class="fa fa-check"></i>1.3 When to Use Each Category</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#structure-of-this-book"><i class="fa fa-check"></i>1.4 Structure of This Book</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#suggested-reading"><i class="fa fa-check"></i>1.5 Suggested Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="docking.html"><a href="docking.html"><i class="fa fa-check"></i><b>2</b> Docking-Based (Structure-Based) PPI Prediction</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#overview-of-docking-approaches"><i class="fa fa-check"></i>2.1 Overview of Docking Approaches</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#haddock"><i class="fa fa-check"></i>2.2 HADDOCK</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#key-features"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#input"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#output"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#advantages"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#limitations"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#hdock-server"><i class="fa fa-check"></i>2.3 HDOCK Server</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#key-features-1"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#input-1"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#output-1"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#advantages-1"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#limitations-1"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#cluspro"><i class="fa fa-check"></i>2.4 ClusPro</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#key-features-2"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#input-2"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#output-2"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#advantages-2"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#limitations-2"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#zdock"><i class="fa fa-check"></i>2.5 ZDOCK</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#key-features-3"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#input-3"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#output-3"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#advantages-3"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#limitations-3"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#gramm-vakser-lab"><i class="fa fa-check"></i>2.6 GRAMM (Vakser Lab)</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#key-features-4"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#input-4"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#output-4"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#advantages-4"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#limitations-4"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#pydock"><i class="fa fa-check"></i>2.7 pyDock</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#key-features-5"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#input-5"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#output-5"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#advantages-5"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#limitations-5"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#comparative-summary-of-docking-tools"><i class="fa fa-check"></i>2.8 Comparative Summary of Docking Tools</a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#practical-workflow-suggestions"><i class="fa fa-check"></i>2.9 Practical Workflow Suggestions</a>
+<ul>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#when-starting-without-structural-information"><i class="fa fa-check"></i><strong>When starting without structural information</strong></a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#when-interface-residues-are-known-or-predicted"><i class="fa fa-check"></i><strong>When interface residues are known or predicted</strong></a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#when-many-protein-pairs-must-be-screened"><i class="fa fa-check"></i><strong>When many protein pairs must be screened</strong></a></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#when-sequences-are-available-but-structures-are-missing"><i class="fa fa-check"></i><strong>When sequences are available but structures are missing</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="docking.html"><a href="docking.html#relation-to-other-chapters"><i class="fa fa-check"></i>2.10 Relation to Other Chapters</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="structure-analysis.html"><a href="structure-analysis.html"><i class="fa fa-check"></i><b>3</b> Structure-Based Interface Analysis (PDBePISA)</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#purpose-of-structure-based-interface-analysis"><i class="fa fa-check"></i>3.1 Purpose of Structure-Based Interface Analysis</a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#what-is-pdbepisa"><i class="fa fa-check"></i>3.2 What Is PDBePISA?</a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#how-pdbepisa-works"><i class="fa fa-check"></i>3.3 How PDBePISA Works</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#buried-surface-area-bsa"><i class="fa fa-check"></i><strong>1. Buried Surface Area (BSA)</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#solvation-free-energy-gain-%CE%B4gint"><i class="fa fa-check"></i><strong>2. Solvation Free Energy Gain (ΔG<sub>int</sub>)</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#hydrogen-bond-and-salt-bridge-networks"><i class="fa fa-check"></i><strong>3. Hydrogen Bond and Salt Bridge Networks</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#interface-residue-mapping"><i class="fa fa-check"></i><strong>4. Interface Residue Mapping</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#biological-assembly-prediction"><i class="fa fa-check"></i><strong>5. Biological Assembly Prediction</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#key-outputs-of-pdbepisa"><i class="fa fa-check"></i>3.4 Key Outputs of PDBePISA</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#interface-summary"><i class="fa fa-check"></i><strong>• Interface Summary</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#assembly-summary"><i class="fa fa-check"></i><strong>• Assembly Summary</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#stability-prediction"><i class="fa fa-check"></i><strong>• Stability Prediction</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#detailed-contact-map"><i class="fa fa-check"></i><strong>• Detailed Contact Map</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#when-to-use-pdbepisa"><i class="fa fa-check"></i>3.5 When to Use PDBePISA</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#after-docking-chapter-2"><i class="fa fa-check"></i><strong>1. After Docking (Chapter 2)</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#after-alphafold-multimer-prediction-chapter-6"><i class="fa fa-check"></i><strong>2. After AlphaFold-Multimer Prediction (Chapter 6)</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#crystal-structure-interpretation"><i class="fa fa-check"></i><strong>3. Crystal Structure Interpretation</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#identifying-potential-hotspots"><i class="fa fa-check"></i><strong>4. Identifying Potential Hotspots</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#pdbepisa-vs.-docking-scores"><i class="fa fa-check"></i>3.6 PDBePISA vs. Docking Scores</a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#practical-workflow-integration"><i class="fa fa-check"></i>3.7 Practical Workflow Integration</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#a-recommended-pipeline-integrating-chapter-2-and-3"><i class="fa fa-check"></i><strong>A recommended pipeline integrating Chapter 2 and 3:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#advantages-and-limitations"><i class="fa fa-check"></i>3.8 Advantages and Limitations</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#advantages-6"><i class="fa fa-check"></i><strong>Advantages</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#limitations-6"><i class="fa fa-check"></i><strong>Limitations</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-analysis.html"><a href="structure-analysis.html#summary"><i class="fa fa-check"></i>3.9 Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html"><i class="fa fa-check"></i><b>4</b> Sequence- and Knowledge-Based PPI Prediction Models</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#overview-of-sequence-knowledge-based-methods"><i class="fa fa-check"></i>4.1 Overview of Sequence / Knowledge-Based Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#evolutionary-features"><i class="fa fa-check"></i><strong>4.1.1. Evolutionary Features</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#functional-annotation"><i class="fa fa-check"></i><strong>4.1.2. Functional Annotation</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#literature-mining-text-evidence"><i class="fa fa-check"></i><strong>4.1.3. Literature Mining &amp; Text Evidence</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#biological-network-topology"><i class="fa fa-check"></i><strong>4.1.4. Biological Network Topology</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#homology-based-templates"><i class="fa fa-check"></i><strong>4.1.5. Homology-Based Templates</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#string"><i class="fa fa-check"></i>4.2 STRING</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#key-features-6"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#input-6"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#output-6"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#advantages-7"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#limitations-7"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#preppi"><i class="fa fa-check"></i>4.3 PrePPI</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#key-features-7"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#input-7"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#output-7"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#advantages-8"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#limitations-8"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#ppi-miner"><i class="fa fa-check"></i>4.4 PPI-Miner</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#key-features-8"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#input-8"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#output-8"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#advantages-9"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#limitations-9"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#coth"><i class="fa fa-check"></i>4.5 COTH</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#key-features-9"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#input-9"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#output-9"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#advantages-10"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#limitations-10"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#comparison-of-sequence-knowledge-based-tools"><i class="fa fa-check"></i>4.6 Comparison of Sequence / Knowledge-Based Tools</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#when-to-use-sequence-knowledge-based-methods"><i class="fa fa-check"></i>4.7 When to Use Sequence / Knowledge-Based Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#proteome-wide-filtering"><i class="fa fa-check"></i><strong>4.7.1. Proteome-wide filtering</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#finding-candidates-for-experimental-validation"><i class="fa fa-check"></i><strong>4.7.2. Finding candidates for experimental validation</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#supporting-evidence"><i class="fa fa-check"></i><strong>4.7.3. Supporting evidence</strong></a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#when-structural-data-is-unavailable"><i class="fa fa-check"></i><strong>4.7.4. When structural data is unavailable</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#integrating-knowledge-based-tools-into-a-workflow"><i class="fa fa-check"></i>4.8 Integrating Knowledge-Based Tools into a Workflow</a></li>
+<li class="chapter" data-level="" data-path="sequence-knowledge.html"><a href="sequence-knowledge.html#summary-1"><i class="fa fa-check"></i>4.9 Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deep-learning.html"><a href="deep-learning.html"><i class="fa fa-check"></i><b>5</b> Deep Learning–Based PPI Prediction</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#why-deep-learning-for-ppi-prediction"><i class="fa fa-check"></i>5.1 Why Deep Learning for PPI Prediction?</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#advantages-of-dl-based-ppi-prediction"><i class="fa fa-check"></i>Advantages of DL-based PPI prediction</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#limitations-11"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#general-deep-learning-paradigms-for-ppi-prediction"><i class="fa fa-check"></i>5.2 General Deep Learning Paradigms for PPI Prediction</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#siamese-twin-network-models"><i class="fa fa-check"></i><strong>1. Siamese / Twin Network Models</strong></a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#graph-neural-network-gnn-models"><i class="fa fa-check"></i><strong>2. Graph Neural Network (GNN) Models</strong></a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#transformer-based-embedding-models"><i class="fa fa-check"></i><strong>3. Transformer-Based Embedding Models</strong></a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#contact-map-prediction-models"><i class="fa fa-check"></i><strong>4. Contact Map Prediction Models</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#d-script"><i class="fa fa-check"></i>5.3 D-SCRIPT</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#reference"><i class="fa fa-check"></i>Reference</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#key-features-10"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#model-architecture"><i class="fa fa-check"></i>Model Architecture</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#input-10"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#output-10"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#advantages-11"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#limitations-12"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#deeppurpose-ppi-module"><i class="fa fa-check"></i>5.4 DeepPurpose (PPI Module)</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#repository"><i class="fa fa-check"></i>Repository</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#key-features-11"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#input-11"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#output-11"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#advantages-12"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#limitations-13"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#mape-ppi"><i class="fa fa-check"></i>5.5 MAPE-PPI</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#key-features-12"><i class="fa fa-check"></i>Key Features</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#model-architecture-1"><i class="fa fa-check"></i>Model Architecture</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#input-12"><i class="fa fa-check"></i>Input</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#output-12"><i class="fa fa-check"></i>Output</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#advantages-13"><i class="fa fa-check"></i>Advantages</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#limitations-14"><i class="fa fa-check"></i>Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#comparison-of-deep-learning-models"><i class="fa fa-check"></i>5.6 Comparison of Deep Learning Models</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#when-to-use-deep-learning-models"><i class="fa fa-check"></i>5.7 When to Use Deep Learning Models</a>
+<ul>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#proteome-wide-screening"><i class="fa fa-check"></i><strong>1. Proteome-wide screening</strong></a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#dataset-driven-tasks"><i class="fa fa-check"></i><strong>2. Dataset-driven tasks</strong></a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#supporting-evidence-1"><i class="fa fa-check"></i><strong>3. Supporting evidence</strong></a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#cases-lacking-structural-data"><i class="fa fa-check"></i><strong>4. Cases lacking structural data</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#integrating-deep-learning-with-other-prediction-methods"><i class="fa fa-check"></i>5.8 Integrating Deep Learning with Other Prediction Methods</a></li>
+<li class="chapter" data-level="" data-path="deep-learning.html"><a href="deep-learning.html#summary-2"><i class="fa fa-check"></i>5.9 Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="structure-generation.html"><a href="structure-generation.html"><i class="fa fa-check"></i><b>6</b> Structure Generation Methods: AlphaFold-Multimer</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#what-is-alphafold-multimer"><i class="fa fa-check"></i>6.1 What Is AlphaFold-Multimer?</a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#how-alphafold-multimer-works"><i class="fa fa-check"></i>6.2 How AlphaFold-Multimer Works</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#joint-msa-construction"><i class="fa fa-check"></i><strong>1. Joint MSA Construction</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#evoformer-multimer-blocks"><i class="fa fa-check"></i><strong>2. Evoformer-Multimer Blocks</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#structure-module"><i class="fa fa-check"></i><strong>3. Structure Module</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#recycling"><i class="fa fa-check"></i><strong>4. Recycling</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#key-confidence-metrics-plddt-ptm-iptm"><i class="fa fa-check"></i>6.3 Key Confidence Metrics (pLDDT, pTM, ipTM)</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#plddt-local-confidence"><i class="fa fa-check"></i><strong>1. pLDDT — Local Confidence</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#ptm-predicted-tm-score"><i class="fa fa-check"></i><strong>2. pTM — Predicted TM-score</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#iptm-inter-chain-tm-score"><i class="fa fa-check"></i><strong>3. ipTM — Inter-chain TM-score</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#recommended-composite-score"><i class="fa fa-check"></i><strong>Recommended composite score:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#predicted-aligned-error-pae"><i class="fa fa-check"></i>6.4 Predicted Aligned Error (PAE)</a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#evaluating-af-multimer-predictions-with-dockq"><i class="fa fa-check"></i>6.5 Evaluating AF-Multimer Predictions with DockQ</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#dockq-score-interpretation"><i class="fa fa-check"></i><strong>DockQ score interpretation:</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#advantages-of-alphafold-multimer"><i class="fa fa-check"></i>6.6 Advantages of AlphaFold-Multimer</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#predicts-complexes-directly-from-sequence"><i class="fa fa-check"></i><strong>1. Predicts complexes directly from sequence</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#often-more-accurate-than-docking"><i class="fa fa-check"></i><strong>2. Often more accurate than docking</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#provides-residues-level-interface-confidence"><i class="fa fa-check"></i><strong>3. Provides residues-level interface confidence</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#useful-for-protein-design-workflows"><i class="fa fa-check"></i><strong>4. Useful for protein design workflows</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#does-not-require-templates-or-known-interface-information"><i class="fa fa-check"></i><strong>5. Does not require templates or known interface information</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#limitations-of-alphafold-multimer"><i class="fa fa-check"></i>6.7 Limitations of AlphaFold-Multimer</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#limited-for-transient-or-weak-interactions"><i class="fa fa-check"></i><strong>1. Limited for transient or weak interactions</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#sensitive-to-msa-pairing"><i class="fa fa-check"></i><strong>2. Sensitive to MSA pairing</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#may-generate-biologically-irrelevant-assemblies"><i class="fa fa-check"></i><strong>3. May generate biologically irrelevant assemblies</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#cannot-explore-alternative-binding-modes"><i class="fa fa-check"></i><strong>4. Cannot explore alternative binding modes</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#poor-performance-for"><i class="fa fa-check"></i><strong>5. Poor performance for:</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#not-ideal-for-mutation-scanning"><i class="fa fa-check"></i><strong>6. Not ideal for mutation scanning</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#integrating-af-multimer-with-docking-pisa-and-deep-learning"><i class="fa fa-check"></i>6.8 Integrating AF-Multimer with Docking, PISA, and Deep Learning</a>
+<ul>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#step-1-sequence-level-screening"><i class="fa fa-check"></i><strong>Step 1 — Sequence-Level Screening</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#step-2-af-multimer-structure-prediction"><i class="fa fa-check"></i><strong>Step 2 — AF-Multimer Structure Prediction</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#step-3-evaluate-interfaces"><i class="fa fa-check"></i><strong>Step 3 — Evaluate Interfaces</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#step-4-complement-with-docking-chapter-2"><i class="fa fa-check"></i><strong>Step 4 — Complement with Docking (Chapter 2)</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#step-5-interface-stability-with-pdbepisa-chapter-3"><i class="fa fa-check"></i><strong>Step 5 — Interface Stability with PDBePISA (Chapter 3)</strong></a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#step-6-final-ranking-with-dockq"><i class="fa fa-check"></i><strong>Step 6 — Final Ranking with DockQ</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#recommended-best-practices"><i class="fa fa-check"></i>6.9 Recommended Best Practices</a></li>
+<li class="chapter" data-level="" data-path="structure-generation.html"><a href="structure-generation.html#summary-3"><i class="fa fa-check"></i>6.10 Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References &amp; External Resources</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#major-ppi-databases"><i class="fa fa-check"></i>7.1 Major PPI Databases</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#general-ppi-databases"><i class="fa fa-check"></i><strong>General PPI Databases</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#specialized-ppi-and-interaction-databases"><i class="fa fa-check"></i><strong>Specialized PPI and Interaction Databases</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#structural-databases-for-ppi-analysis"><i class="fa fa-check"></i>7.2 Structural Databases for PPI Analysis</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#benchmark-datasets-for-ppi-prediction"><i class="fa fa-check"></i>7.3 Benchmark Datasets for PPI Prediction</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#docking-benchmarks"><i class="fa fa-check"></i><strong>Docking Benchmarks</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#deep-learning-benchmarks"><i class="fa fa-check"></i><strong>Deep Learning Benchmarks</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#sequence-based-prediction-benchmarks"><i class="fa fa-check"></i><strong>Sequence-Based Prediction Benchmarks</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#tools-and-servers-summary-all-methods-in-this-book"><i class="fa fa-check"></i>7.4 Tools and Servers Summary (All Methods in This Book)</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#docking-tools-chapter-2"><i class="fa fa-check"></i><strong>Docking Tools (Chapter 2)</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#structure-analysis-chapter-3"><i class="fa fa-check"></i><strong>Structure Analysis (Chapter 3)</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#sequence-knowledgebased-models-chapter-4"><i class="fa fa-check"></i><strong>Sequence / Knowledge–Based Models (Chapter 4)</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#deep-learning-models-chapter-5"><i class="fa fa-check"></i><strong>Deep Learning Models (Chapter 5)</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#structure-generation-tools-chapter-6"><i class="fa fa-check"></i><strong>Structure-Generation Tools (Chapter 6)</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#recommended-literature"><i class="fa fa-check"></i>7.5 Recommended Literature</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#reviews-on-ppi-prediction"><i class="fa fa-check"></i><strong>Reviews on PPI Prediction</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#deep-learning-based-ppi-prediction"><i class="fa fa-check"></i><strong>Deep Learning-Based PPI Prediction</strong></a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#docking-structural-benchmark-papers"><i class="fa fa-check"></i><strong>Docking &amp; Structural Benchmark Papers</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Protein–Protein Interaction (PPI) Prediction Methods Summary</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="structure-generation" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Structure Generation Methods: AlphaFold-Multimer<a href="structure-generation.html#structure-generation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Traditional docking-based methods (Chapter 2) attempt to sample and score possible orientations between proteins using structural information.<br />
+In contrast, <strong>structure-generation approaches</strong> directly produce <strong>3D complex models from amino acid sequences</strong>, without requiring docking or predefined interface hypotheses.</p>
+<p>The most successful and widely adopted structure-generation tool for PPIs is <strong>AlphaFold-Multimer (AF-Multimer)</strong>, an extension of AlphaFold2 capable of predicting protein complexes.</p>
+<hr />
+<div id="what-is-alphafold-multimer" class="section level2 unnumbered hasAnchor">
+<h2>6.1 What Is AlphaFold-Multimer?<a href="structure-generation.html#what-is-alphafold-multimer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>AlphaFold-Multimer</strong> is a deep learning framework designed to predict <strong>multi-chain protein complex structures</strong> using:</p>
+<ul>
+<li>joint MSAs<br />
+</li>
+<li>inter-chain co-evolution<br />
+</li>
+<li>geometric pattern learning<br />
+</li>
+<li>iterative recycling strategies</li>
+</ul>
+<p>AF-Multimer outputs complete 3D structural models containing all protein chains in the complex.<br />
+This enables accurate prediction of <strong>binding interfaces</strong>, <strong>assembly stoichiometry</strong>, and <strong>global arrangement</strong>—something docking alone often cannot reliably achieve.</p>
+<hr />
+</div>
+<div id="how-alphafold-multimer-works" class="section level2 unnumbered hasAnchor">
+<h2>6.2 How AlphaFold-Multimer Works<a href="structure-generation.html#how-alphafold-multimer-works" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>AF-Multimer extends the original AlphaFold2 architecture in several ways:</p>
+<div id="joint-msa-construction" class="section level3 unnumbered hasAnchor">
+<h3><strong>1. Joint MSA Construction</strong><a href="structure-generation.html#joint-msa-construction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>AF-M attempts to pair homologous sequences across different species, identifying <strong>co-evolutionary signals</strong> between chains.</p>
+<ul>
+<li>Paired MSAs (preferred)<br />
+</li>
+<li>Unpaired MSAs (fallback)<br />
+</li>
+<li>Concatenation of MSAs for all chains</li>
+</ul>
+</div>
+<div id="evoformer-multimer-blocks" class="section level3 unnumbered hasAnchor">
+<h3><strong>2. Evoformer-Multimer Blocks</strong><a href="structure-generation.html#evoformer-multimer-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Evoformer is extended to enable:</p>
+<ul>
+<li>cross-chain attention<br />
+</li>
+<li>pair representation between chains<br />
+</li>
+<li>inter-chain geometric reasoning</li>
+</ul>
+<p>This allows the network to infer:</p>
+<ul>
+<li>interface residue positions<br />
+</li>
+<li>long-range inter-chain contacts<br />
+</li>
+<li>the arrangement of chains in 3D space</li>
+</ul>
+</div>
+<div id="structure-module" class="section level3 unnumbered hasAnchor">
+<h3><strong>3. Structure Module</strong><a href="structure-generation.html#structure-module" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The structure module generates 3D coordinates using:</p>
+<ul>
+<li>invariant point attention (IPA)<br />
+</li>
+<li>torsion-angle prediction<br />
+</li>
+<li>iterative recycling for refinement</li>
+</ul>
+</div>
+<div id="recycling" class="section level3 unnumbered hasAnchor">
+<h3><strong>4. Recycling</strong><a href="structure-generation.html#recycling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Predictions are refined by feeding outputs back into the model several times, improving global geometry and interface accuracy.</p>
+<hr />
+</div>
+</div>
+<div id="key-confidence-metrics-plddt-ptm-iptm" class="section level2 unnumbered hasAnchor">
+<h2>6.3 Key Confidence Metrics (pLDDT, pTM, ipTM)<a href="structure-generation.html#key-confidence-metrics-plddt-ptm-iptm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>AlphaFold-Multimer provides several critical confidence metrics useful for assessing prediction quality:</p>
+<div id="plddt-local-confidence" class="section level3 unnumbered hasAnchor">
+<h3><strong>1. pLDDT — Local Confidence</strong><a href="structure-generation.html#plddt-local-confidence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A per-residue score (0–100) indicating local structural accuracy.</p>
+<ul>
+<li><blockquote>
+<p>90: very high local confidence</p>
+</blockquote></li>
+<li>70–90: reasonable<br />
+</li>
+<li>&lt;70: unreliable local structure</li>
+</ul>
+</div>
+<div id="ptm-predicted-tm-score" class="section level3 unnumbered hasAnchor">
+<h3><strong>2. pTM — Predicted TM-score</strong><a href="structure-generation.html#ptm-predicted-tm-score" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A global confidence metric evaluating the overall accuracy of the folded structure.</p>
+</div>
+<div id="iptm-inter-chain-tm-score" class="section level3 unnumbered hasAnchor">
+<h3><strong>3. ipTM — Inter-chain TM-score</strong><a href="structure-generation.html#iptm-inter-chain-tm-score" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>unique metric for multimers</strong> that measures confidence in <em>inter-chain</em> geometry.</p>
+<p>ipTM is the most important indicator of whether AF-Multimer believes two proteins truly interact.</p>
+<ul>
+<li><strong>&gt; 0.6</strong> → strong interface confidence<br />
+</li>
+<li><strong>0.4–0.6</strong> → uncertain interaction<br />
+</li>
+<li><strong>&lt; 0.4</strong> → likely non-interacting or incorrect interface</li>
+</ul>
+</div>
+<div id="recommended-composite-score" class="section level3 unnumbered hasAnchor">
+<h3><strong>Recommended composite score:</strong><a href="structure-generation.html#recommended-composite-score" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>0.8 * ipTM + 0.2 * pTM
+Used for ranking multiple Multimer models.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="predicted-aligned-error-pae" class="section level2 unnumbered hasAnchor">
+<h2>6.4 Predicted Aligned Error (PAE)<a href="structure-generation.html#predicted-aligned-error-pae" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>AF-Multimer outputs a <strong>PAE matrix</strong> describing predicted alignment error between all pairs of residues.</p>
+<p>Interpretation:</p>
+<ul>
+<li><strong>Low inter-chain PAE</strong> → reliable interface<br />
+</li>
+<li><strong>High inter-chain PAE</strong> → unstable / noisy binding interface</li>
+</ul>
+<p>PAE is often more informative than pLDDT for multimer evaluation.</p>
+<hr />
+</div>
+<div id="evaluating-af-multimer-predictions-with-dockq" class="section level2 unnumbered hasAnchor">
+<h2>6.5 Evaluating AF-Multimer Predictions with DockQ<a href="structure-generation.html#evaluating-af-multimer-predictions-with-dockq" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>AF-Multimer structures are commonly benchmarked using <strong>DockQ</strong>, an established metric for evaluating protein complex models.</p>
+<p>DockQ incorporates:</p>
+<ul>
+<li>Fnat (fraction of native contacts)<br />
+</li>
+<li>LRMSD (ligand RMSD)<br />
+</li>
+<li>iRMSD (interface RMSD)</li>
+</ul>
+<div id="dockq-score-interpretation" class="section level3 unnumbered hasAnchor">
+<h3><strong>DockQ score interpretation:</strong><a href="structure-generation.html#dockq-score-interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th>Score</th>
+<th>Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt;0.80</td>
+<td>High-quality complex</td>
+</tr>
+<tr class="even">
+<td>0.50–0.80</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>0.23–0.50</td>
+<td>Acceptable</td>
+</tr>
+<tr class="even">
+<td>&lt;0.23</td>
+<td>Incorrect</td>
+</tr>
+</tbody>
+</table>
+<p>DockQ is frequently used to:</p>
+<ul>
+<li>benchmark AF-Multimer against docking<br />
+</li>
+<li>evaluate modeled complexes<br />
+</li>
+<li>compare multiple AF-M outputs</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="advantages-of-alphafold-multimer" class="section level2 unnumbered hasAnchor">
+<h2>6.6 Advantages of AlphaFold-Multimer<a href="structure-generation.html#advantages-of-alphafold-multimer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="predicts-complexes-directly-from-sequence" class="section level3 unnumbered hasAnchor">
+<h3><strong>1. Predicts complexes directly from sequence</strong><a href="structure-generation.html#predicts-complexes-directly-from-sequence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A major advantage over docking.</p>
+</div>
+<div id="often-more-accurate-than-docking" class="section level3 unnumbered hasAnchor">
+<h3><strong>2. Often more accurate than docking</strong><a href="structure-generation.html#often-more-accurate-than-docking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Especially for obligate complexes with strong co-evolution signals.</p>
+</div>
+<div id="provides-residues-level-interface-confidence" class="section level3 unnumbered hasAnchor">
+<h3><strong>3. Provides residues-level interface confidence</strong><a href="structure-generation.html#provides-residues-level-interface-confidence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Through PAE and ipTM.</p>
+</div>
+<div id="useful-for-protein-design-workflows" class="section level3 unnumbered hasAnchor">
+<h3><strong>4. Useful for protein design workflows</strong><a href="structure-generation.html#useful-for-protein-design-workflows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Including:</p>
+<ul>
+<li>binder design<br />
+</li>
+<li>enzymatic complexes<br />
+</li>
+<li>de novo scaffolds<br />
+</li>
+<li>RFdiffusion outputs</li>
+</ul>
+</div>
+<div id="does-not-require-templates-or-known-interface-information" class="section level3 unnumbered hasAnchor">
+<h3><strong>5. Does not require templates or known interface information</strong><a href="structure-generation.html#does-not-require-templates-or-known-interface-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+</div>
+</div>
+<div id="limitations-of-alphafold-multimer" class="section level2 unnumbered hasAnchor">
+<h2>6.7 Limitations of AlphaFold-Multimer<a href="structure-generation.html#limitations-of-alphafold-multimer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Despite its strengths, AF-Multimer has important limitations:</p>
+<div id="limited-for-transient-or-weak-interactions" class="section level3 unnumbered hasAnchor">
+<h3><strong>1. Limited for transient or weak interactions</strong><a href="structure-generation.html#limited-for-transient-or-weak-interactions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Such interactions often lack evolutionary signals → low ipTM.</p>
+</div>
+<div id="sensitive-to-msa-pairing" class="section level3 unnumbered hasAnchor">
+<h3><strong>2. Sensitive to MSA pairing</strong><a href="structure-generation.html#sensitive-to-msa-pairing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Incorrect pairing → hallucinated or incorrect interfaces.</p>
+</div>
+<div id="may-generate-biologically-irrelevant-assemblies" class="section level3 unnumbered hasAnchor">
+<h3><strong>3. May generate biologically irrelevant assemblies</strong><a href="structure-generation.html#may-generate-biologically-irrelevant-assemblies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spurious compact interfaces are common.</p>
+</div>
+<div id="cannot-explore-alternative-binding-modes" class="section level3 unnumbered hasAnchor">
+<h3><strong>4. Cannot explore alternative binding modes</strong><a href="structure-generation.html#cannot-explore-alternative-binding-modes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Docking is still needed for sampling conformational diversity.</p>
+</div>
+<div id="poor-performance-for" class="section level3 unnumbered hasAnchor">
+<h3><strong>5. Poor performance for:</strong><a href="structure-generation.html#poor-performance-for" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>intrinsically disordered proteins (IDPs)<br />
+</li>
+<li>large oligomers (&gt;4–6 chains)<br />
+</li>
+<li>systems with competing binding partners<br />
+</li>
+<li>flexible multi-domain proteins</li>
+</ul>
+</div>
+<div id="not-ideal-for-mutation-scanning" class="section level3 unnumbered hasAnchor">
+<h3><strong>6. Not ideal for mutation scanning</strong><a href="structure-generation.html#not-ideal-for-mutation-scanning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Relative ΔΔG is not reliable compared to specialized energetics tools.</p>
+<hr />
+</div>
+</div>
+<div id="integrating-af-multimer-with-docking-pisa-and-deep-learning" class="section level2 unnumbered hasAnchor">
+<h2>6.8 Integrating AF-Multimer with Docking, PISA, and Deep Learning<a href="structure-generation.html#integrating-af-multimer-with-docking-pisa-and-deep-learning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A robust prediction workflow typically combines AF-Multimer with other methods:</p>
+<div id="step-1-sequence-level-screening" class="section level3 unnumbered hasAnchor">
+<h3><strong>Step 1 — Sequence-Level Screening</strong><a href="structure-generation.html#step-1-sequence-level-screening" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From Chapter 4–5:</p>
+<ul>
+<li>STRING<br />
+</li>
+<li>PrePPI<br />
+</li>
+<li>D-SCRIPT<br />
+</li>
+<li>DeepPurpose<br />
+</li>
+<li>MAPE-PPI</li>
+</ul>
+<p>→ identify candidates likely to interact.</p>
+</div>
+<div id="step-2-af-multimer-structure-prediction" class="section level3 unnumbered hasAnchor">
+<h3><strong>Step 2 — AF-Multimer Structure Prediction</strong><a href="structure-generation.html#step-2-af-multimer-structure-prediction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Run AF-Multimer using:</p>
+<ul>
+<li>multiple seeds<br />
+</li>
+<li>paired MSAs<br />
+</li>
+<li>rank models by (0.8 × ipTM + 0.2 × pTM)</li>
+</ul>
+</div>
+<div id="step-3-evaluate-interfaces" class="section level3 unnumbered hasAnchor">
+<h3><strong>Step 3 — Evaluate Interfaces</strong><a href="structure-generation.html#step-3-evaluate-interfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use:</p>
+<ul>
+<li>PAE<br />
+</li>
+<li>ipTM<br />
+</li>
+<li>pLDDT</li>
+</ul>
+</div>
+<div id="step-4-complement-with-docking-chapter-2" class="section level3 unnumbered hasAnchor">
+<h3><strong>Step 4 — Complement with Docking (Chapter 2)</strong><a href="structure-generation.html#step-4-complement-with-docking-chapter-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Docking is useful when:</p>
+<ul>
+<li>AF-Multimer fails<br />
+</li>
+<li>ipTM is low<br />
+</li>
+<li>interfaces are ambiguous<br />
+</li>
+<li>multiple poses are possible</li>
+</ul>
+<p>Use methods such as:</p>
+<ul>
+<li>HADDOCK<br />
+</li>
+<li>HDOCK<br />
+</li>
+<li>ClusPro<br />
+</li>
+<li>ZDOCK</li>
+</ul>
+</div>
+<div id="step-5-interface-stability-with-pdbepisa-chapter-3" class="section level3 unnumbered hasAnchor">
+<h3><strong>Step 5 — Interface Stability with PDBePISA (Chapter 3)</strong><a href="structure-generation.html#step-5-interface-stability-with-pdbepisa-chapter-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Evaluate:</p>
+<ul>
+<li>ΔG<sub>int</sub><br />
+</li>
+<li>ΔG<sub>diss</sub><br />
+</li>
+<li>interface area<br />
+</li>
+<li>H-bond networks</li>
+</ul>
+</div>
+<div id="step-6-final-ranking-with-dockq" class="section level3 unnumbered hasAnchor">
+<h3><strong>Step 6 — Final Ranking with DockQ</strong><a href="structure-generation.html#step-6-final-ranking-with-dockq" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Select the top structural models<br />
+</li>
+<li>Compare across AF-Multimer and docking predictions</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="recommended-best-practices" class="section level2 unnumbered hasAnchor">
+<h2>6.9 Recommended Best Practices<a href="structure-generation.html#recommended-best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Always check <strong>ipTM and PAE</strong>, not only pLDDT<br />
+</li>
+<li>Use <strong>multiple model seeds</strong> (8–20)<br />
+</li>
+<li>Avoid trusting overly compact “hallucinated” complexes<br />
+</li>
+<li>For weak interactions → use docking + PISA + Deep Learning voting<br />
+</li>
+<li>For multi-chain systems → run subcomplexes separately<br />
+</li>
+<li>Carefully curate MSAs for multimer inputs<br />
+</li>
+<li>Combine AF-Multimer with docking for alternative poses</li>
+</ul>
+<hr />
+</div>
+<div id="summary-3" class="section level2 unnumbered hasAnchor">
+<h2>6.10 Summary<a href="structure-generation.html#summary-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>AlphaFold-Multimer represents a major advance in protein complex prediction, enabling structural modeling of PPIs directly from sequences.<br />
+However, its performance varies depending on interaction type, evolutionary signals, and MSA construction.<br />
+To achieve reliable PPI modeling, AF-Multimer must be used in conjunction with:</p>
+<ul>
+<li>docking (Chapter 2)<br />
+</li>
+<li>interface analysis (Chapter 3)<br />
+</li>
+<li>sequence- or deep-learning predictors (Chapters 4–5)</li>
+</ul>
+<p>A hybrid workflow remains the most robust approach for accurate structural PPI prediction.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="deep-learning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-structure-generation.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+h1:references References & External Resources
+h2:major-ppi-databases 7.1 Major PPI Databases
+h3:general-ppi-databases 
+h3:specialized-ppi-and-interaction-databases 
+h2:structural-databases-for-ppi-analysis 7.2 Structural Databases for PPI Analysis
+h2:benchmark-datasets-for-ppi-prediction 7.3 Benchmark Datasets for PPI Prediction
+h3:docking-benchmarks 
+h3:deep-learning-benchmarks 
+h3:sequence-based-prediction-benchmarks 
+h2:tools-and-servers-summary-all-methods-in-this-book 7.4 Tools and Servers Summary (All Methods in This Book)
+h3:docking-tools-chapter-2 
+h3:structure-analysis-chapter-3 
+h3:sequence-knowledgebased-models-chapter-4 
+h3:deep-learning-models-chapter-5 
+h3:structure-generation-tools-chapter-6 
+h2:recommended-literature 7.5 Recommended Literature
+h3:reviews-on-ppi-prediction 
+h3:deep-learning-based-ppi-prediction 
+h3:docking-structural-benchmark-papers 
+

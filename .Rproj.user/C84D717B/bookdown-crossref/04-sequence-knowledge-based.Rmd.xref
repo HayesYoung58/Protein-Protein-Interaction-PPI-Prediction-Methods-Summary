@@ -1,0 +1,40 @@
+h1:sequence-knowledge Sequence- and Knowledge-Based PPI Prediction Models
+h2:overview-of-sequence-knowledge-based-methods 4.1 Overview of Sequence / Knowledge-Based Methods
+h3:evolutionary-features 
+h3:functional-annotation 
+h3:literature-mining-text-evidence 
+h3:biological-network-topology 
+h3:homology-based-templates 
+h2:string 4.2 STRING
+h3:key-features Key Features
+h3:input Input
+h3:output Output
+h3:advantages Advantages
+h3:limitations Limitations
+h2:preppi 4.3 PrePPI
+h3:key-features-1 Key Features
+h3:input-1 Input
+h3:output-1 Output
+h3:advantages-1 Advantages
+h3:limitations-1 Limitations
+h2:ppi-miner 4.4 PPI-Miner
+h3:key-features-2 Key Features
+h3:input-2 Input
+h3:output-2 Output
+h3:advantages-2 Advantages
+h3:limitations-2 Limitations
+h2:coth 4.5 COTH
+h3:key-features-3 Key Features
+h3:input-3 Input
+h3:output-3 Output
+h3:advantages-3 Advantages
+h3:limitations-3 Limitations
+h2:comparison-of-sequence-knowledge-based-tools 4.6 Comparison of Sequence / Knowledge-Based Tools
+h2:when-to-use-sequence-knowledge-based-methods 4.7 When to Use Sequence / Knowledge-Based Methods
+h3:proteome-wide-filtering 
+h3:finding-candidates-for-experimental-validation 
+h3:supporting-evidence 
+h3:when-structural-data-is-unavailable 
+h2:integrating-knowledge-based-tools-into-a-workflow 4.8 Integrating Knowledge-Based Tools into a Workflow
+h2:summary 4.9 Summary
+

@@ -1,0 +1,40 @@
+h1:deep-learning Deep Learning–Based PPI Prediction
+h2:why-deep-learning-for-ppi-prediction 5.1 Why Deep Learning for PPI Prediction?
+h3:advantages-of-dl-based-ppi-prediction Advantages of DL-based PPI prediction
+h3:limitations Limitations
+h2:general-deep-learning-paradigms-for-ppi-prediction 5.2 General Deep Learning Paradigms for PPI Prediction
+h3:siamese-twin-network-models 
+h3:graph-neural-network-gnn-models 
+h3:transformer-based-embedding-models 
+h3:contact-map-prediction-models 
+h2:d-script 5.3 D-SCRIPT
+h3:reference Reference
+h3:key-features Key Features
+h3:model-architecture Model Architecture
+h3:input Input
+h3:output Output
+h3:advantages Advantages
+h3:limitations-1 Limitations
+h2:deeppurpose-ppi-module 5.4 DeepPurpose (PPI Module)
+h3:repository Repository
+h3:key-features-1 Key Features
+h3:input-1 Input
+h3:output-1 Output
+h3:advantages-1 Advantages
+h3:limitations-2 Limitations
+h2:mape-ppi 5.5 MAPE-PPI
+h3:key-features-2 Key Features
+h3:model-architecture-1 Model Architecture
+h3:input-2 Input
+h3:output-2 Output
+h3:advantages-2 Advantages
+h3:limitations-3 Limitations
+h2:comparison-of-deep-learning-models 5.6 Comparison of Deep Learning Models
+h2:when-to-use-deep-learning-models 5.7 When to Use Deep Learning Models
+h3:proteome-wide-screening 
+h3:dataset-driven-tasks 
+h3:supporting-evidence 
+h3:cases-lacking-structural-data 
+h2:integrating-deep-learning-with-other-prediction-methods 5.8 Integrating Deep Learning with Other Prediction Methods
+h2:summary 5.9 Summary
+
