@@ -1,27 +1,661 @@
 {
     "sources": [
         {
-            "URL": "http://yihui.org/knitr/",
+            "URL": "https://doi.org/10.17504/protocols.io.81wgbz25qgpk/v1",
             "author": [
                 {
-                    "family": "Xie",
-                    "given": "Yihui"
+                    "family": "Adriaenssens",
+                    "given": "Elias"
                 }
             ],
-            "edition": "2nd",
-            "id": "xie2015",
+            "id": "Adriaenssens_2024",
             "issued": {
                 "date-parts": [
                     [
-                        2015
+                        2024,
+                        7
                     ]
                 ]
             },
-            "note": "ISBN 978-1498716963",
-            "publisher": "Chapman; Hall/CRC",
-            "publisher-place": "Boca Raton, Florida",
-            "title": "Dynamic documents with R and knitr",
+            "publisher": "ZappyLab, Inc.",
+            "title": "Protein structure prediction with AlphaFold-multimer v1",
             "type": "book"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0161879",
+            "author": [
+                {
+                    "family": "Basu",
+                    "given": "Sankar"
+                },
+                {
+                    "family": "Wallner",
+                    "given": "Björn"
+                }
+            ],
+            "container-title": "PLOS ONE",
+            "id": "Basu_Wallner_2016",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        8
+                    ]
+                ]
+            },
+            "page": "e0161879",
+            "title": "DockQ: A quality measure for protein-protein docking models",
+            "title-short": "DockQ",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1002/prot.10389",
+            "author": [
+                {
+                    "family": "Chen",
+                    "given": "Rong"
+                },
+                {
+                    "family": "Li",
+                    "given": "Li"
+                },
+                {
+                    "family": "Weng",
+                    "given": "Zhiping"
+                }
+            ],
+            "container-title": "Proteins: Structure, Function, and Bioinformatics",
+            "id": "Chen_Li_Weng_2003",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003,
+                        5
+                    ]
+                ]
+            },
+            "page": "80-87",
+            "title": "ZDOCK: An initial-stage protein-docking algorithm",
+            "title-short": "ZDOCK",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "DOI": "10.1093/bioinformatics/btg371",
+            "author": [
+                {
+                    "family": "Comeau",
+                    "given": "Stephen R."
+                },
+                {
+                    "family": "Gatchell",
+                    "given": "David W."
+                },
+                {
+                    "family": "Vajda",
+                    "given": "Sandor"
+                },
+                {
+                    "family": "Camacho",
+                    "given": "Carlos J."
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "id": "Comeau_Gatchell_Vajda_Camacho_2004",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004,
+                        1
+                    ]
+                ]
+            },
+            "page": "45-50",
+            "title": "ClusPro: An automated docking and discrimination method for the prediction of protein complexes",
+            "title-short": "ClusPro",
+            "type": "article-journal",
+            "volume": "20"
+        },
+        {
+            "DOI": "10.1021/ja026939x",
+            "author": [
+                {
+                    "family": "Dominguez",
+                    "given": "Cyril"
+                },
+                {
+                    "family": "Boelens",
+                    "given": "Rolf"
+                },
+                {
+                    "family": "Bonvin",
+                    "given": "Alexandre M. J. J."
+                }
+            ],
+            "container-title": "Journal of the American Chemical Society",
+            "id": "Dominguez_Boelens_Bonvin_2003",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003,
+                        1
+                    ]
+                ]
+            },
+            "page": "1731-1737",
+            "title": "HADDOCK: A protein–protein docking approach based on biochemical or biophysical information",
+            "title-short": "HADDOCK",
+            "type": "article-journal",
+            "volume": "125"
+        },
+        {
+            "DOI": "10.1093/bioinformatics/btaa1005",
+            "author": [
+                {
+                    "family": "Huang",
+                    "given": "Kexin"
+                },
+                {
+                    "family": "Fu",
+                    "given": "Tianfan"
+                },
+                {
+                    "family": "Glass",
+                    "given": "Lucas M."
+                },
+                {
+                    "family": "Zitnik",
+                    "given": "Marinka"
+                },
+                {
+                    "family": "Xiao",
+                    "given": "Cao"
+                },
+                {
+                    "family": "Sun",
+                    "given": "Jimeng"
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "id": "Huang_Fu_Glass_Zitnik_Xiao_Sun_2020",
+            "issue": "22–23",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        12
+                    ]
+                ]
+            },
+            "page": "5545-5547",
+            "title": "DeepPurpose: A deep learning library for drug–target interaction prediction",
+            "title-short": "DeepPurpose",
+            "type": "article-journal",
+            "volume": "36"
+        },
+        {
+            "DOI": "10.1093/bioinformatics/btt262",
+            "author": [
+                {
+                    "family": "Jiménez-García",
+                    "given": "Brian"
+                },
+                {
+                    "family": "Pons",
+                    "given": "Carles"
+                },
+                {
+                    "family": "Fernández-Recio",
+                    "given": "Juan"
+                }
+            ],
+            "container-title": "Bioinformatics",
+            "id": "Jimenez-Garcia_Pons_Fernandez-Recio_2013",
+            "issue": "13",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        5
+                    ]
+                ]
+            },
+            "page": "1698-1699",
+            "title": "pyDockWEB: A web server for rigid-body protein–protein docking using electrostatics and desolvation scoring",
+            "title-short": "pyDockWEB",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "DOI": "10.1038/nprot.2016.169",
+            "author": [
+                {
+                    "family": "Kozakov",
+                    "given": "Dima"
+                },
+                {
+                    "family": "Hall",
+                    "given": "David R."
+                },
+                {
+                    "family": "Xia",
+                    "given": "Bing"
+                },
+                {
+                    "family": "Porter",
+                    "given": "Kathryn A."
+                },
+                {
+                    "family": "Padhorny",
+                    "given": "Dzmitry"
+                },
+                {
+                    "family": "Yueh",
+                    "given": "Christine"
+                },
+                {
+                    "family": "Beglov",
+                    "given": "Dmitri"
+                },
+                {
+                    "family": "Vajda",
+                    "given": "Sandor"
+                }
+            ],
+            "container-title": "Nature Protocols",
+            "id": "Kozakov_Hall_Xia_Porter_Padhorny_Yueh_Beglov_Vajda_2017",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        1
+                    ]
+                ]
+            },
+            "page": "255-278",
+            "title": "The ClusPro web server for protein–protein docking",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "DOI": "10.1016/j.jmb.2007.05.022",
+            "author": [
+                {
+                    "family": "Krissinel",
+                    "given": "Evgeny"
+                },
+                {
+                    "family": "Henrick",
+                    "given": "Kim"
+                }
+            ],
+            "container-title": "Journal of Molecular Biology",
+            "id": "Krissinel_Henrick_2007",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007,
+                        9
+                    ]
+                ]
+            },
+            "page": "774-797",
+            "title": "Inference of macromolecular assemblies from crystalline state",
+            "type": "article-journal",
+            "volume": "372"
+        },
+        {
+            "DOI": "10.1101/2023.02.27.530276",
+            "author": [
+                {
+                    "family": "Petrey",
+                    "given": "Donald"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "Haiqing"
+                },
+                {
+                    "family": "Trudeau",
+                    "given": "Stephen"
+                },
+                {
+                    "family": "Murray",
+                    "given": "Diana"
+                },
+                {
+                    "family": "Honig",
+                    "given": "Barry"
+                }
+            ],
+            "container-title": "bioRxiv",
+            "id": "Petrey_Zhao_Trudeau_Murray_Honig_2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "PrePPI: A structure-informed proteome-wide database of protein-protein interactions",
+            "title-short": "PrePPI",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1016/j.bpj.2022.11.463",
+            "author": [
+                {
+                    "family": "Singh",
+                    "given": "Amar"
+                },
+                {
+                    "family": "Copeland",
+                    "given": "Matthew M."
+                },
+                {
+                    "family": "Kundrotas",
+                    "given": "Petras J."
+                },
+                {
+                    "family": "Vakser",
+                    "given": "Ilya A."
+                }
+            ],
+            "container-title": "Biophysical Journal",
+            "id": "Singh_Copeland_Kundrotas_Vakser_2023",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        2
+                    ]
+                ]
+            },
+            "page": "47a",
+            "title": "GRAMM: A webserver for free and template-based protein docking",
+            "title-short": "GRAMM",
+            "type": "article-journal",
+            "volume": "122"
+        },
+        {
+            "DOI": "10.1016/j.cels.2021.08.010",
+            "author": [
+                {
+                    "family": "Sledzieski",
+                    "given": "Samuel"
+                },
+                {
+                    "family": "Singh",
+                    "given": "Rohit"
+                },
+                {
+                    "family": "Cowen",
+                    "given": "Lenore"
+                },
+                {
+                    "family": "Berger",
+                    "given": "Bonnie"
+                }
+            ],
+            "container-title": "Cell Systems",
+            "id": "Sledzieski_Singh_Cowen_Berger_2021",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        10
+                    ]
+                ]
+            },
+            "page": "969-982.e6",
+            "title": "D-SCRIPT translates genome to phenome with sequence-based, structure-aware, genome-scale predictions of protein-protein interactions",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "DOI": "10.1093/nar/gky1131",
+            "author": [
+                {
+                    "family": "Szklarczyk",
+                    "given": "Damian"
+                },
+                {
+                    "family": "Gable",
+                    "given": "Annika L."
+                },
+                {
+                    "family": "Lyon",
+                    "given": "David"
+                },
+                {
+                    "family": "Junge",
+                    "given": "Alexander"
+                },
+                {
+                    "family": "Wyder",
+                    "given": "Stefan"
+                },
+                {
+                    "family": "Huerta-Cepas",
+                    "given": "Jaime"
+                },
+                {
+                    "family": "Simonovic",
+                    "given": "Milan"
+                },
+                {
+                    "family": "Doncheva",
+                    "given": "Nadezhda T."
+                },
+                {
+                    "family": "Morris",
+                    "given": "John H."
+                },
+                {
+                    "family": "Bork",
+                    "given": "Peer"
+                },
+                {
+                    "family": "Jensen",
+                    "given": "Lars J."
+                },
+                {
+                    "dropping-particle": "von",
+                    "family": "Mering",
+                    "given": "Christian"
+                }
+            ],
+            "container-title": "Nucleic Acids Research",
+            "id": "Szklarczyk_STRING_2018",
+            "issue": "D1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        11
+                    ]
+                ]
+            },
+            "page": "D607-D613",
+            "title": "STRING v11: Protein–protein association networks with increased coverage, supporting functional discovery in genome-wide datasets",
+            "title-short": "STRING v11",
+            "type": "article-journal",
+            "volume": "47"
+        },
+        {
+            "URL": "https://arxiv.org/abs/2402.14391",
+            "author": [
+                {
+                    "family": "Wu",
+                    "given": "Lirong"
+                },
+                {
+                    "family": "Tian",
+                    "given": "Yijun"
+                },
+                {
+                    "family": "Huang",
+                    "given": "Yufei"
+                },
+                {
+                    "family": "Li",
+                    "given": "Siyuan"
+                },
+                {
+                    "family": "Lin",
+                    "given": "Haitao"
+                },
+                {
+                    "family": "Chawla",
+                    "given": "Nitesh V."
+                },
+                {
+                    "family": "Li",
+                    "given": "Stan Z."
+                }
+            ],
+            "container-title": "arXiv preprint arXiv:2402.14391",
+            "id": "Wu_MAPEPPI_2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        2
+                    ]
+                ]
+            },
+            "title": "MAPE-PPI: Towards effective and efficient protein-protein interaction prediction via microenvironment-aware protein embedding",
+            "title-short": "MAPE-PPI",
+            "type": ""
+        },
+        {
+            "DOI": "10.1093/nar/gkx407",
+            "author": [
+                {
+                    "family": "Yan",
+                    "given": "Yumeng"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Di"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Pei"
+                },
+                {
+                    "family": "Li",
+                    "given": "Botong"
+                },
+                {
+                    "family": "Huang",
+                    "given": "Sheng-You"
+                }
+            ],
+            "container-title": "Nucleic Acids Research",
+            "id": "Yan_Zhang_HDOCK_2017",
+            "issue": "W1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        5
+                    ]
+                ]
+            },
+            "page": "W365-W373",
+            "title": "HDOCK: A web server for protein–protein and protein–DNA/RNA docking based on a hybrid strategy",
+            "title-short": "HDOCK",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "DOI": "10.1016/j.jmb.2015.09.014",
+            "author": [
+                {
+                    "dropping-particle": "van",
+                    "family": "Zundert",
+                    "given": "G. C. P."
+                },
+                {
+                    "family": "Rodrigues",
+                    "given": "J. P. G. L. M."
+                },
+                {
+                    "family": "Trellet",
+                    "given": "M."
+                },
+                {
+                    "family": "Schmitz",
+                    "given": "C."
+                },
+                {
+                    "family": "Kastritis",
+                    "given": "P. L."
+                },
+                {
+                    "family": "Karaca",
+                    "given": "E."
+                },
+                {
+                    "family": "Melquiond",
+                    "given": "A. S. J."
+                },
+                {
+                    "dropping-particle": "van",
+                    "family": "Dijk",
+                    "given": "M."
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Vries",
+                    "given": "S. J."
+                },
+                {
+                    "family": "Bonvin",
+                    "given": "A. M. J. J."
+                }
+            ],
+            "container-title": "Journal of Molecular Biology",
+            "id": "van_Zundert_HADDOCK22_2016",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        2
+                    ]
+                ]
+            },
+            "page": "720-725",
+            "title": "The HADDOCK2.2 web server: User-friendly integrative modeling of biomolecular complexes",
+            "title-short": "The HADDOCK2.2 web server",
+            "type": "article-journal",
+            "volume": "428"
+        },
+        {
+            "DOI": "10.1021/acs.jcim.2c01033",
+            "container-title": "Journal of Chemical Information and Modeling",
+            "id": "PPI_Miner_2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "PPI-miner: A structure and sequence motif co-driven protein-protein interaction mining and modeling computational method",
+            "title-short": "PPI-miner",
+            "type": "article-journal"
         },
         {
             "URL": "https://www.R-project.org/",
